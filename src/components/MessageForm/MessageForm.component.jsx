@@ -7,7 +7,7 @@ export function MessageForm(props) {
       <Input
         type="text"
         name="message"
-        placeholder="Type your message!"
+        placeholder="Type a new message"
         onChange={props.onChange}
         value={props.messageContent}
       />

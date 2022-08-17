@@ -7,7 +7,7 @@ export function UserProvider(props) {
   const [drone, setDrone] = useState(null);
   const userAvatarColor = "blue";
 
-  const logIn = (username) => {
+  const logIn = (username, avatarUrl) => {
     const drone = new window.Scaledrone("V2fekSOXB8TIBD1f", {
       data: { username, userAvatarColor },
     });

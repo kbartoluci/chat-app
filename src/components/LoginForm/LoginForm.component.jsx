@@ -3,14 +3,22 @@ import { Input } from "../Input";
 
 export function LoginForm(props) {
   return (
-    <form onSubmit={props.onSubmit}>
-      <Input
-        type="text"
-        name="username"
-        placeholder="Username"
-        onChange={props.onChange}
-      />
-      <Button type="submit">Log in</Button>
-    </form>
+    <div>
+      <form onSubmit={props.onSubmit}>
+        <Input
+          type="text"
+          name="username"
+          placeholder="Enter a username"
+          onChange={props.onChangeUsername}
+        />
+        <Input
+          type="text"
+          name="pokemon_name"
+          placeholder="Enter pokemon name to get avatar"
+          onChange={props.onChangePokemonName}
+        />
+        <Button type="submit">Log in</Button>
+      </form>
+    </div>
   );
 }

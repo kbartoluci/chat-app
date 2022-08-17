@@ -1,20 +1,57 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { LoginForm as Component } from "./LoginForm.component";
 import { UserContext } from "../../contexts/UserContext";
 
 export function LoginForm(props) {
   const userContext = useContext(UserContext);
   const [username, setUsername] = useState(null);
+  const [pokemonName, setPokemonName] = useState(null);
+  const [avatarUrl, setAvatarUrl] = useState(null);
+  const [error, setError] = useState(null);
 
-  const handleChange = (event) => {
+  useEffect(() => {
+    if (pokemonName !== null && pokemonName !== undefined) {
+      fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          setAvatarUrl(json.sprites.front_default);
+        })
+        .catch((error) => setError(error));
+    } else {
+      // setUserInfo(null);
+      // setUserRepositories(null);
+    }
+  }, [pokemonName]);
+
+  // if (error !== null) {
+  //   return <div>Error</div>;
+  // }
+
+  // if (userInfo === null) {
+  //   return <div></div>;
+  // }
+
+  const handleChangeUsername = (event) => {
     const value = event.target.value;
     setUsername(value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    userContext.logIn(username);
+  const handleChangePokemonName = (event) => {
+    const value = event.target.value;
+    setPokemonName(value);
   };
 
-  return <Component onSubmit={handleSubmit} onChange={handleChange} />;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    userContext.logIn(username, avatarUrl);
+  };
+
+  return (
+    <Component
+      onSubmit={handleSubmit}
+      onChangeUsername={handleChangeUsername}
+      onChangePokemonName={handleChangePokemonName}
+    />
+  );
 }
