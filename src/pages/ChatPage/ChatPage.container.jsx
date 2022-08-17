@@ -1,4 +1,4 @@
-import { useContext,useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { ChatPage as Component } from "./ChatPage.component";
 
@@ -6,15 +6,15 @@ export function ChatPage() {
   const { user, drone } = useContext(UserContext);
   const [error, setError] = useState(null);
   const [joinedRoom, setJoinedRoom] = useState(false);
-  const [messages, setMessages] = useState([{
-    id: 11,
-    text: 'hello',
-    member: {
-      id: 25,
-      username: 'petar',
-      userAvatarColor: 'red',
-    }}]);
-
+  // const [messages, setMessages] = useState([{
+  //   id: 11,
+  //   text: 'hello',
+  //   member: {
+  //     id: 25,
+  //     username: 'petar',
+  //     userAvatarColor: 'red',
+  //   }}]);
+  const [messages, setMessages] = useState([]);
   useEffect(() => {
     const room = drone.subscribe("observable-room");
 
