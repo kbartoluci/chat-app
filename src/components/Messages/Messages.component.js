@@ -1,3 +1,5 @@
+import "./Messages.styles.css";
+
 export function Messages(props) {
   const { messages } = props;
 

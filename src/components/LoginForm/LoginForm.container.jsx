@@ -6,7 +6,7 @@ export function LoginForm(props) {
   const userContext = useContext(UserContext);
   const [username, setUsername] = useState(null);
   const [pokemonName, setPokemonName] = useState(null);
-  const [avatarUrl, setAvatarUrl] = useState(null);
+  const [profilePictureUrl, setprofilePictureUrl] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export function LoginForm(props) {
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
-          setAvatarUrl(json.sprites.front_default);
+          setprofilePictureUrl(json.sprites.front_default);
         })
         .catch((error) => setError(error));
     } else {
@@ -40,11 +40,12 @@ export function LoginForm(props) {
   const handleChangePokemonName = (event) => {
     const value = event.target.value;
     setPokemonName(value);
+    setprofilePictureUrl(null);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    userContext.logIn(username, avatarUrl);
+    userContext.logIn(username, profilePictureUrl);
   };
 
   return (
@@ -52,6 +53,7 @@ export function LoginForm(props) {
       onSubmit={handleSubmit}
       onChangeUsername={handleChangeUsername}
       onChangePokemonName={handleChangePokemonName}
+      profilePictureUrl={profilePictureUrl}
     />
   );
 }

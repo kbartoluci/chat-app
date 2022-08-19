@@ -1,0 +1,37 @@
+.login-form-background {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../assets/images/open-pokeball.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100vmin;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  /* background-color: #f5dcab; */
+  height: 700px;
+  padding: 20px;
+  position: relative;
+  top: 7vmin;
+}
+
+.profile-picture {
+  width: 20vmin;
+  height: 20vmin;
+  max-width: 400px;
+  max-height: 400px;
+  border-radius: 20%;
+  margin-bottom: 20px;
+}
+
+.login-form-input {
+  padding-bottom: 20px;
+}
