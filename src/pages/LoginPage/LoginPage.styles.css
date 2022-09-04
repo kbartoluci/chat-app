@@ -1,0 +1,22 @@
+.login-page {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../assets/images/open-pokeball.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100vmin;
+}
+
+.login-page__title {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 3rem;
+  background: var(--primary-color);
+}

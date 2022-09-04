@@ -1,25 +1,21 @@
-.login-form-background {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background-image: url(../../assets/images/open-pokeball.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100vmin;
-}
-
-.login-form-container {
+.login-form__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 7vmin;
+  top: 5vmin;
 }
 
-.profile-picture {
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.login-form__profile-picture {
   width: 20vmin;
   height: 20vmin;
   max-width: 400px;
@@ -28,6 +24,8 @@
   margin-bottom: 20px;
 }
 
-/* .login-form-input {
-  padding-bottom: 20px;
-} */
+.login-form__error-message {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  min-height: 1.2rem;
+}

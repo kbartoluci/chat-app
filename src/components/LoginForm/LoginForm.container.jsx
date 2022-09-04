@@ -9,36 +9,24 @@ export function LoginForm(props) {
   const [profilePictureUrl, setprofilePictureUrl] = useState(null);
   const [pokemonError, setPokemonError] = useState("");
   const [usernameError, setUsernameError] = useState("");
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (pokemonName !== null && pokemonName !== undefined) {
       fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
         .then((response) => {
-          console.log(response);
           if (response.ok) {
             setPokemonError("");
             return response.json();
           }
         })
         .then((json) => {
-          //console.log(json);
           setprofilePictureUrl(json.sprites.front_default);
         })
-        .catch((error) => setError(error));
-    } else {
-      // setUserInfo(null);
-      // setUserRepositories(null);
+        .catch((error) => {
+          console.log(error);
+        });
     }
   }, [pokemonName]);
-
-  // if (error !== null) {
-  //   return <div>Error</div>;
-  // }
-
-  // if (userInfo === null) {
-  //   return <div></div>;
-  // }
 
   const handleChangeUsername = (event) => {
     const value = event.target.value;
@@ -53,11 +41,9 @@ export function LoginForm(props) {
     setprofilePictureUrl(null);
   };
 
-  const handleSubmit = (event) => {
+  const isValidLoginForm = () => {
     let nameAndPokemonEntered = false;
     let hasProfile = false;
-
-    event.preventDefault();
 
     if (
       (pokemonName === undefined ||
@@ -91,6 +77,15 @@ export function LoginForm(props) {
     }
 
     if (nameAndPokemonEntered && hasProfile) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (isValidLoginForm()) {
       userContext.logIn(username, profilePictureUrl);
     }
   };

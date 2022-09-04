@@ -1,3 +1,5 @@
+import "./LoginPage.styles.css";
+
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginForm } from "../../components/LoginForm";
@@ -14,7 +16,8 @@ export function LoginPage() {
   }, [navigate, userContext, userContext.isLoggedIn]);
 
   return (
-    <div>
+    <div className="login-page">
+      <div className="login-page__title">Poké Fan Chat</div>
       <LoginForm />
     </div>
   );

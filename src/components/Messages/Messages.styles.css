@@ -1,144 +1,51 @@
-/* .App {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-} */
-
-/* .App-header {
-  background-color: #262626;
-  overflow: visible;
-  width: 100%;
-  text-align: center;
-  color: white;
-} */
-
-.Messages-list {
+.messages-list {
   padding: 20px 0;
-  /* max-width: 900px; */
   width: 100%;
   margin: 0 auto;
   list-style: none;
   padding-left: 0;
   flex-grow: 1;
-  overflow: auto;
 }
 
-.Messages-message {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-}
-
-.Messages-message.currentMember {
-  justify-content: flex-end;
-}
-
-.Message-content {
-  /* display: inline-block; */
+.message-content {
   display: flex;
   align-items: center;
 }
 
-.Message-content.currentMember {
+.message-content.currentMember {
   justify-content: end;
 }
 
-.Message-profile-picture {
-  display: flex;
-  flex-direction: column;
-  padding-left: 5px;
-}
-
-/* .currentMember>.Message-content {
-  align-items: flex-end;
-} */
-
-.Messages-message > .avatar {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 10px -10px;
-}
-
-.Message-content > .username {
+.message-content > .username {
   display: block;
   color: black;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   padding-bottom: 4px;
 }
 
-.Message-content > .timestamp {
+.message-content > .timestamp {
   display: block;
   color: gray;
-  font-size: 14px;
+  font-size: 1.4rem;
   padding-left: 10px;
 }
 
-.Message-content > .text {
+.message-content > .text {
   padding: 10px;
   max-width: 400px;
   margin: 0;
   border-radius: 12px;
   background-color: cornflowerblue;
-  color: white;
-  display: inline-block;
+  color: var(--secondary-color);
+  font-size: 1.6rem;
 }
 
-.Message-content.currentMember > .text {
+.message-content.currentMember > .text {
   background-color: orangered;
 }
 
-.message-form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-  /* max-width: 900px; */
-  margin: 0 auto 40px;
-  /* padding-right: 20px;
-  padding-left: 20px; */
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-  /* max-width: 900px; */
-  margin: 0 auto 40px;
-}
-
-input {
-  padding: 5px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid orangered;
-  flex-grow: 1;
-}
-
-button {
-  padding: 5px 10px;
-  font-size: 16px;
-  background-color: orangered;
-  /* background-color:#FF3C00; */
-  /* background-color:#FF7538; */
-  color: white;
-  border: none;
-  border-radius: 8px;
-  margin-left: 10px;
-}
-
-button:hover {
-  /* background-color: darkorange; */
-  background-color: #FF7538;
-}
-
-li {
+.messages-list__li {
   padding-right: 20px;
   padding-left: 20px;
 }

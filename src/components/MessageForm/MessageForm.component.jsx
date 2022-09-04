@@ -1,3 +1,5 @@
+import "./MessageForm.styles.css"
+
 import { Input } from "../Input";
 import { Button } from "../Button";
 
@@ -10,6 +12,8 @@ export function MessageForm(props) {
         placeholder="Type a new message"
         onChange={props.onChange}
         value={props.messageContent}
+        autoComplete="off"
+        className="message-form__input"
       />
       <Button type="submit">Send</Button>
     </form>

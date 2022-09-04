@@ -7,17 +7,7 @@ import { UserContext } from "../../contexts/UserContext";
 import { Button } from "../../components/Button";
 
 export function ChatPage(props) {
-  // if (props.error !== null) {
-  //   return <div className="chat-page">Failed to connect to chat room.</div>;
-  // }
-
   const userContext = useContext(UserContext);
-
-  // useEffect(() => {
-  //   if (!userContext.isLoggedIn()) {
-  //     navigate("/");
-  //   }
-  // }, [navigate, userContext, userContext.isLoggedIn]);
 
   if (!props.joinedRoom) {
     return (
@@ -27,17 +17,23 @@ export function ChatPage(props) {
     );
   }
 
+  if (props.error !== null) {
+    return <div className="chat-page">Failed to connect to chat room.</div>;
+  }
+
   return (
     <div className="chat-page">
-      <div className="chat-page__title">Poké Fan Chat</div>
-      <Button
-        className="chat-page__log-out"
-        onClick={() => userContext.logOut()}
-      >
-        Log out
-      </Button>
+      <div className="chat-page__header">
+        <span className="chat-page__title">Poké Fan Chat</span>
+        <Button
+          className="chat-page__log-out"
+          onClick={() => userContext.logOut()}
+        >
+          Log out
+        </Button>
+      </div>
       {props.user && <Messages messages={props.messages} user={props.user} />}
-      <div className="chat-page__message-form">
+      <div className="chat-page__message-form-container">
         <MessageForm onSendMessage={props.onSendMessage} />
       </div>
     </div>

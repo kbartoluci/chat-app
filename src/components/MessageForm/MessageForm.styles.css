@@ -1,0 +1,16 @@
+.message-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 auto 40px;
+}
+
+.message-form__input {
+  padding: 5px;
+  font-size: 1.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  width: 100%;
+}

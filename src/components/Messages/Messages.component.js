@@ -8,10 +8,10 @@ export function Messages(props) {
     const { user } = props;
     const messageFromUser = member.id === user.id;
     const className = messageFromUser
-      ? "Message-content currentMember"
-      : "Message-content";
+      ? "message-content currentMember"
+      : "message-content";
     return (
-      <li key={id}>
+      <li key={id} className="messages-list__li">
         <div className={className}>
           <span className="username">{member.username}</span>
           <span className="timestamp">{time}</span>
@@ -19,7 +19,6 @@ export function Messages(props) {
         <div className={className}>
           <img
             src={member.profilePictureUrl}
-            className="picture"
             alt="profile_picture"
           />
           <div className="text">{text}</div>
@@ -29,6 +28,6 @@ export function Messages(props) {
   };
 
   return (
-    <ul className="Messages-list">{messages.map((m) => renderMessage(m))}</ul>
+    <ul className="messages-list">{messages.map((m) => renderMessage(m))}</ul>
   );
 }
