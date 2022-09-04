@@ -52,7 +52,7 @@ export function LoginForm(props) {
       (username === undefined || username === null || username === "")
     ) {
       setPokemonError("Please enter a Pokémon!");
-      setUsernameError("Please enter a username!");
+      setUsernameError("Please enter a nickname!");
     } else if (
       pokemonName === undefined ||
       pokemonName === null ||
@@ -60,7 +60,7 @@ export function LoginForm(props) {
     ) {
       setPokemonError("Please enter a Pokémon!");
     } else if (username === undefined || username === null || username === "") {
-      setUsernameError("Please enter a username!");
+      setUsernameError("Please enter a nickname!");
     } else {
       nameAndPokemonEntered = true;
     }
