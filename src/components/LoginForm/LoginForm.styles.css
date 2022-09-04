@@ -15,10 +15,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 600px;
-  /* background-color: #f5dcab; */
-  height: 700px;
-  padding: 20px;
   position: relative;
   top: 7vmin;
 }
@@ -32,6 +28,6 @@
   margin-bottom: 20px;
 }
 
-.login-form-input {
+/* .login-form-input {
   padding-bottom: 20px;
-}
+} */

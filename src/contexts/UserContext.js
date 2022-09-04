@@ -5,11 +5,10 @@ export const UserContext = createContext();
 export function UserProvider(props) {
   const [user, setUser] = useState(null);
   const [drone, setDrone] = useState(null);
-  const userAvatarColor = "blue";
 
   const logIn = (username, profilePictureUrl) => {
     const drone = new window.Scaledrone("V2fekSOXB8TIBD1f", {
-      data: { username, userAvatarColor },
+      data: { username, profilePictureUrl },
     });
     drone.on("open", (error) => {
       if (error) {
@@ -19,7 +18,7 @@ export function UserProvider(props) {
       setUser({
         id: drone.clientId,
         username: username,
-        avatarColor: userAvatarColor,
+        profilePictureUrl: profilePictureUrl,
       });
     });
   };

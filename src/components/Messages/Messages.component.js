@@ -4,20 +4,24 @@ export function Messages(props) {
   const { messages } = props;
 
   const renderMessage = (message) => {
-    const { id, text, member } = message;
+    const { id, text, time, member } = message;
     const { user } = props;
     const messageFromUser = member.id === user.id;
     const className = messageFromUser
-      ? "Messages-message currentMember"
-      : "Messages-message";
+      ? "Message-content currentMember"
+      : "Message-content";
     return (
-      <li key={id} className={className}>
-        <span
-          className="avatar"
-          style={{ backgroundColor: member.userAvatarColor }}
-        />
-        <div className="Message-content">
-          <div className="username">{member.username}</div>
+      <li key={id}>
+        <div className={className}>
+          <span className="username">{member.username}</span>
+          <span className="timestamp">{time}</span>
+        </div>
+        <div className={className}>
+          <img
+            src={member.profilePictureUrl}
+            className="picture"
+            alt="profile_picture"
+          />
           <div className="text">{text}</div>
         </div>
       </li>
@@ -25,8 +29,6 @@ export function Messages(props) {
   };
 
   return (
-    <ul className="Messages-list">
-      {messages.map((m) => renderMessage(m))}
-    </ul>
+    <ul className="Messages-list">{messages.map((m) => renderMessage(m))}</ul>
   );
 }

@@ -1,0 +1,26 @@
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100vh;
+}
+
+.chat-page__title {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  background: orangered;
+}
+
+.chat-page__log-out {
+  position: absolute;
+  width: 130px;
+  top: 15px;
+  right: 0;
+  color: aqua;
+}
+
+.chat-page__message-form {
+  padding-left: 20px;
+  padding-right: 20px;
+}

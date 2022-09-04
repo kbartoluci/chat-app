@@ -3,7 +3,7 @@ import { Button } from "../Button";
 
 export function MessageForm(props) {
   return (
-    <form onSubmit={props.onSubmit}>
+    <form className="message-form" onSubmit={props.onSubmit}>
       <Input
         type="text"
         name="message"
