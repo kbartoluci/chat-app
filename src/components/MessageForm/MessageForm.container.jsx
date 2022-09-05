@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MessageForm as Component } from "./MessageForm.component";
 
 export function MessageForm(props) {
-  const [messageContent, setMessageContent] = useState('');
+  const [messageContent, setMessageContent] = useState("");
 
   const handleChange = (event) => {
     const value = event.target.value;
@@ -12,7 +12,7 @@ export function MessageForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     props.onSendMessage(messageContent);
-    setMessageContent('');
+    setMessageContent("");
   };
 
   return (

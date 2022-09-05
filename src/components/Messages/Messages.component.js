@@ -17,10 +17,7 @@ export function Messages(props) {
           <span className="timestamp">{time}</span>
         </div>
         <div className={className}>
-          <img
-            src={member.profilePictureUrl}
-            alt="profile_picture"
-          />
+          <img src={member.profilePictureUrl} alt="profile_picture" />
           <div className="text">{text}</div>
         </div>
       </li>

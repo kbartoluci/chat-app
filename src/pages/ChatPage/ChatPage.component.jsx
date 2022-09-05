@@ -11,14 +11,16 @@ export function ChatPage(props) {
 
   if (!props.joinedRoom) {
     return (
-      <div className="chat-page">
+      <div className="chat-page alert">
         Entering to the Pokemon World, please wait...
       </div>
     );
   }
 
   if (props.error !== null) {
-    return <div className="chat-page">Failed to connect to chat room.</div>;
+    return (
+      <div className="chat-page alert">Failed to connect to chat room.</div>
+    );
   }
 
   return (

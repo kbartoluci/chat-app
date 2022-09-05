@@ -42,7 +42,7 @@
 }
 
 .message-content.currentMember > .text {
-  background-color: orangered;
+  background-color: var(--primary-color);
 }
 
 .messages-list__li {

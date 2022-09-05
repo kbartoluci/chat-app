@@ -34,3 +34,9 @@
   padding-left: 20px;
   padding-right: 20px;
 }
+
+.alert {
+  font-size: 1.6rem;
+  align-items: center;
+  justify-content: center;
+}
